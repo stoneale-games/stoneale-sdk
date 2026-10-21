@@ -1,0 +1,30 @@
+{
+  "name": "@stoneale/sdk",
+  "version": "0.1.0",
+  "description": "TypeScript SDK for Stoneale's Soroban contracts on Stellar: STONE rewards and soulbound wellness badges.",
+  "license": "Apache-2.0",
+  "repository": "github:stoneale-games/stoneale-sdk",
+  "homepage": "https://github.com/stoneale-games/stoneale-sdk#readme",
+  "keywords": ["stellar", "soroban", "stoneale", "web3-gaming", "sdk"],
+  "type": "module",
+  "exports": "./dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "npm run build && node --test test/unit.test.mjs",
+    "test:testnet": "npm run build && node --test test/testnet.test.mjs",
+    "generate": "bash scripts/generate.sh"
+  },
+  "dependencies": {
+    "@stellar/stellar-sdk": "17.2.1",
+    "buffer": "6.0.3"
+  },
+  "devDependencies": {
+    "typescript": "~5.8.3"
+  }
+}
